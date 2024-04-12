@@ -1,6 +1,9 @@
 import { useState,useEffect } from 'react'
 import Navbar from './componets/Navbar'
 import { v4 as uuidv4 } from 'uuid';
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+
 
 function App() {
   const [todo, setTodo] = useState("")
@@ -98,8 +101,8 @@ function App() {
                       {item.todo}  
                 </div>
                 <div className="buttons flex h-fit">
-                  <button className='bg-purple-600 mx-2 rounded-md px-2 text-white' onClick={(e)=>{handleEdit(e, item.id)}}>Edit</button>
-                  <button className='bg-purple-600 mx-2 rounded-md px-2 text-white' onClick={(e)=>{handleDelete(e, item.id)}}>Delete</button>
+                  <button className='bg-purple-600 mx-2 rounded-md py-[3px] px-[5px] text-white' onClick={(e)=>{handleEdit(e, item.id)}}><FaEdit /></button>
+                  <button className='bg-purple-600 mx-2 rounded-md py-[3px] px-[5px] text-white' onClick={(e)=>{handleDelete(e, item.id)}}><MdDelete /></button>
                 </div>
               </div>
             )
